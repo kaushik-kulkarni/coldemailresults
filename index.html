@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Email Success Story</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #4caf50;
+            --background-color: #f0f8f0;
+            --text-color: #333;
+            --card-background: #fff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .image-container {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Results I've achieved through cold emails</h1>
+    </header>
+
+    <div class="container">
+        <h2>Screenshots of open rates, CTRs, reply rates</h2>
+        <div id="resultsGallery" class="gallery"></div>
+
+        <h2>Screenshots of the replies my emails have received</h2>
+        <div id="responsesGallery" class="gallery"></div>
+    </div>
+
+    <script>
+        const images = [
+            "https://i.ibb.co/YQfJV9R/cold-emailing-results-kaushik-kulkarni.png",
+            "https://i.ibb.co/6YD54gf/Screenshot-2024-07-09-at-3-01-36-AM.png",
+            "https://i.ibb.co/r5vcg9C/Screenshot-2024-07-09-at-3-01-57-AM.png",
+            "https://i.ibb.co/mt9y3GJ/Screenshot-2024-07-17-at-2-34-31-AM.png",
+            "https://i.ibb.co/9WZBwxZ/Screenshot-2024-07-17-at-2-37-29-AM.png",
+            "https://i.ibb.co/BB3pN6h/Screenshot-2024-07-17-at-2-39-18-AM.png",
+            "https://i.ibb.co/4sW2M3B/Screenshot-2024-07-17-at-2-44-10-AM.png",
+            "https://i.ibb.co/b6PrJRn/Screenshot-2024-07-17-at-2-45-00-AM.png",
+            "https://i.ibb.co/Ct6XDZR/Screenshot-2024-07-17-at-2-45-42-AM.png",
+            "https://i.ibb.co/Ctv72Sh/Screenshot-2024-07-17-at-2-45-56-AM.png",
+            "https://i.ibb.co/n8KJBtM/Screenshot-2024-07-17-at-2-46-08-AM.png"
+        ];
+
+        const responses = [
+            "https://i.ibb.co/5YtRyw0/Screenshot-2024-07-17-at-2-47-23-AM.png",
+            "https://i.ibb.co/VY2M5L6/Screenshot-2024-07-17-at-2-47-30-AM.png",
+            "https://i.ibb.co/fdhVqcP/Screenshot-2024-07-17-at-2-47-50-AM.png",
+            "https://i.ibb.co/Ryr9Q0G/Screenshot-2024-07-17-at-2-48-20-AM.png",
+            "https://i.ibb.co/zXRTTVk/Screenshot-2024-07-17-at-2-50-30-AM.png",
+            "https://i.ibb.co/KqqMfcn/Screenshot-2024-07-17-at-2-50-39-AM.png",
+            "https://i.ibb.co/4ZFDf6j/Screenshot-2024-07-17-at-2-50-49-AM.png",
+            "https://i.ibb.co/4Z5Tm4c/Screenshot-2024-07-17-at-2-51-07-AM.png",
+            "https://i.ibb.co/995w38H/Screenshot-2024-07-17-at-2-52-09-AM.png",
+            "https://i.ibb.co/F0GdmP7/Screenshot-2024-07-17-at-2-52-59-AM.png",
+            "https://i.ibb.co/NSSTJy7/Screenshot-2024-07-17-at-2-53-13-AM.png",
+            "https://i.ibb.co/kxrt1vr/Screenshot-2024-07-17-at-2-53-22-AM.png",
+            "https://i.ibb.co/6NwGj8J/Screenshot-2024-07-17-at-2-53-30-AM.png",
+            "https://i.ibb.co/898Bhrb/Screenshot-2024-07-17-at-2-53-46-AM.png",
+            "https://i.ibb.co/Gs7y6TF/Screenshot-2024-07-17-at-2-54-36-AM.png",
+            "https://i.ibb.co/v1qyXfk/Screenshot-2024-07-17-at-2-54-56-AM.png",
+            "https://i.ibb.co/jgZ6NHt/Screenshot-2024-07-17-at-2-55-33-AM.png",
+            "https://i.ibb.co/h2k6c41/Screenshot-2024-07-17-at-2-56-13-AM.png",
+            "https://i.ibb.co/N2MJ67L/Screenshot-2024-07-17-at-2-56-29-AM.png",
+            "https://i.ibb.co/t3txb2Q/Screenshot-2024-07-17-at-2-56-38-AM.png",
+            "https://i.ibb.co/8M2XS9J/Screenshot-2024-07-17-at-2-57-18-AM.png",
+            "https://i.ibb.co/3Wjjy3X/Screenshot-2024-07-17-at-2-57-48-AM.png",
+            "https://i.ibb.co/Cs7pWQ8/Screenshot-2024-07-17-at-2-57-58-AM.png",
+            "https://i.ibb.co/mbZz2rs/Screenshot-2024-07-17-at-2-58-48-AM.png",
+            "https://i.ibb.co/VWbfS9W/Screenshot-2024-07-17-at-2-59-00-AM.png",
+            "https://i.ibb.co/Jr2FCM0/Screenshot-2024-07-17-at-2-59-20-AM.png",
+            "https://i.ibb.co/RDzyY5P/Screenshot-2024-07-17-at-3-00-51-AM.png",
+            "https://i.ibb.co/1btKM33/Screenshot-2024-07-17-at-3-01-31-AM.png",
+            "https://i.ibb.co/yVQq0sF/Screenshot-2024-07-17-at-3-02-00-AM.png",
+            "https://i.ibb.co/WWn1W7w/Screenshot-2024-07-17-at-3-02-14-AM.png",
+            "https://i.ibb.co/D4RQtBR/Screenshot-2024-07-17-at-3-03-08-AM.png",
+            "https://i.ibb.co/rpdtqJb/Screenshot-2024-07-17-at-3-03-25-AM.png",
+            "https://i.ibb.co/tYQ9jKS/Screenshot-2024-07-17-at-3-03-33-AM.png",
+            "https://i.ibb.co/q7k5hNv/Screenshot-2024-07-17-at-3-03-45-AM.png",
+            "https://i.ibb.co/19ZBMQQ/Screenshot-2024-07-17-at-3-04-37-AM.png",
+            "https://i.ibb.co/fq7rbpm/Screenshot-2024-07-17-at-3-05-28-AM.png",
+            "https://i.ibb.co/YQCNxgF/Screenshot-2024-07-17-at-3-08-14-AM.png",
+            "https://i.ibb.co/FWqHdcJ/Screenshot-2024-07-17-at-3-08-37-AM.png",
+            "https://i.ibb.co/rsNNj8w/Screenshot-2024-07-17-at-3-09-20-AM.png",
+            "https://i.ibb.co/M6ZXDzt/Screenshot-2024-07-17-at-3-12-54-AM.png",
+            "https://i.ibb.co/0FPQL5C/Screenshot-2024-07-09-at-3-31-46-AM.png"
+        ];
+
+        function createImageContainer(src, alt, galleryId) {
+            const container = document.createElement('div');
+            container.className = 'image-container';
+
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = alt;
+            img.loading = 'lazy';
+
+            container.appendChild(img);
+            document.getElementById(galleryId).appendChild(container);
+        }
+
+        images.forEach((src, index) => {
+            createImageContainer(src, `Cold Email Result ${index + 1}`, 'resultsGallery');
+        });
+
+        responses.forEach((src, index) => {
+            createImageContainer(src, `Cold Email Response ${index + 1}`, 'responsesGallery');
+        });
+    </script>
+</body>
+</html>
